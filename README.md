@@ -7,6 +7,6 @@ import chat_analysis
 
 a=chat_analysis.ChatLog("chat_log\sample.txt")
 
-a.analysis([user name],time_keyword)     time keyword는 all year month week day가 있음.
+a.analysis([user name],time_keyword)   ->   time keyword는 all year month week day가 있음.
 
 analysis함수는 반환형을 가지고 있어, 반환을 받을 수도 있음.
