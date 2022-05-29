@@ -14,14 +14,14 @@ class ChatLog:
         self.latest_day=self.get_latest_day(self.raw_txt)
 
 
-    def get_latest_day(self,txt):
+    def get_latest_day(self,txt) -> datetime:
         for i in range(len(txt)-1,-1,-1):
             line=txt[i].rstrip().split(" ")
             if line[0]=='---------------' and line[-1] == '---------------':                # 마지막 날의 날짜 확인
                 some_time=self.make_datetime(line[1:4])
                 return some_time
 
-    def make_datetime(self,List_lst):
+    def make_datetime(self,List_lst) -> datetime:
         temp=""
         for i in List_lst:
             i=i[:-1]
@@ -32,7 +32,7 @@ class ChatLog:
         return res
 
 
-    def analysis(self,String_user,String_date) -> dict:       #date : all / year / month/ week / day
+    def analysis(self,String_user,String_date) -> list:       #date : all / year / month/ week / day
         Dict_date={"all":sys.maxsize,"year":365,"month":30,"week":7,"day":1}
         Dict_word={}
         Dict_result={}
